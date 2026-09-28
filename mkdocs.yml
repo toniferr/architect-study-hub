@@ -8,7 +8,7 @@ repo_url: !ENV REPO_URL
 validation:
   anchors: warn
   unrecognized_links: warn
-copyright: Material de estudio personal — resúmenes y ejemplos propios
+copyright: "Material de estudio personal · Creado con ayuda de inteligencia artificial (Claude): puede contener errores, contrasta los datos importantes con las fuentes oficiales"
 
 theme:
   name: material

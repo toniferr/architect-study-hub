@@ -5,9 +5,9 @@ hide:
 
 # Architect Study Hub
 
-Base de conocimiento de **teoría y práctica** de todo lo que un arquitecto / ingeniero de software de primer
-nivel debe tener siempre en la cabeza: fundamentos, diseño, arquitectura, sistemas distribuidos, plataforma,
-inteligencia artificial y cloud. Cada tema combina explicación, **ejemplos de código**, diagramas, **preguntas de repaso** y **ejercicios**.
+Base de conocimiento para **repasar y profundizar** en arquitectura e ingeniería de software: fundamentos, diseño,
+Java y Spring, arquitectura, sistemas distribuidos, datos, plataforma, inteligencia artificial y cloud. Cada tema
+combina explicación, **ejemplos de código**, diagramas, **preguntas de repaso** y **ejercicios resueltos**.
 
 <div class="grid cards" markdown>
 

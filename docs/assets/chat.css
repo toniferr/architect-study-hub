@@ -1,0 +1,158 @@
+/* Asistente de estudio: burbuja y panel de chat (usa los colores del tema, claro u oscuro) */
+.shc-bubble {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 5;
+  width: 3.4rem;
+  height: 3.4rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+.shc-bubble:hover { transform: scale(1.07); }
+.shc-bubble.shc-hidden { display: none; }
+
+.shc-panel {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 5;
+  width: min(26rem, calc(100vw - 2rem));
+  height: min(38rem, calc(100vh - 6rem));
+  display: flex;
+  flex-direction: column;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-size: 0.72rem;
+}
+.shc-panel[hidden] { display: none; }
+
+.shc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.7rem 0.9rem;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.shc-title { font-weight: 700; font-size: 0.8rem; }
+.shc-context { opacity: 0.85; font-size: 0.62rem; margin-top: 0.15rem; }
+.shc-actions { display: flex; gap: 0.3rem; }
+.shc-icon-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+}
+.shc-icon-btn:hover { background: rgba(255, 255, 255, 0.15); }
+
+.shc-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.shc-msg {
+  max-width: 88%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.7rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.shc-user {
+  align-self: flex-end;
+  background: var(--md-accent-fg-color--transparent);
+  white-space: pre-wrap;
+}
+.shc-assistant {
+  align-self: flex-start;
+  background: var(--md-code-bg-color);
+}
+.shc-assistant p { margin: 0.3em 0; }
+.shc-assistant pre {
+  margin: 0.4em 0;
+  padding: 0.5em;
+  overflow-x: auto;
+  font-size: 0.62rem;
+  background: var(--md-default-bg-color);
+  border-radius: 0.3rem;
+}
+.shc-assistant code { font-size: 0.9em; }
+.shc-assistant ul, .shc-assistant ol { margin: 0.3em 0; padding-left: 1.2em; }
+.shc-assistant table { font-size: 0.9em; border-collapse: collapse; }
+.shc-assistant th, .shc-assistant td { border: 1px solid var(--md-default-fg-color--lightest); padding: 0.2em 0.4em; }
+.shc-typing::after { content: "Pensando…"; opacity: 0.6; font-style: italic; }
+
+.shc-notice {
+  font-size: 0.64rem;
+  opacity: 0.8;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+}
+.shc-notice.shc-error { color: #c62828; opacity: 1; }
+
+.shc-footer {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  padding: 0.6rem;
+}
+.shc-chip {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.45rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px dashed var(--md-accent-fg-color);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-size: 0.62rem;
+  text-align: left;
+  cursor: pointer;
+}
+.shc-chip[hidden] { display: none; }
+.shc-row { display: flex; gap: 0.4rem; align-items: flex-end; }
+.shc-input {
+  flex: 1;
+  resize: none;
+  min-height: 2.4rem;
+  max-height: 8rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.5rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font: inherit;
+}
+.shc-send {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .shc-panel { right: 0.5rem; bottom: 0.5rem; width: calc(100vw - 1rem); height: calc(100vh - 5rem); }
+}
+
+@media print {
+  .shc-bubble, .shc-panel { display: none !important; }
+}

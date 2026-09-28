@@ -1,0 +1,52 @@
+/* Ajustes ligeros sobre Material */
+:root {
+  --md-admonition-icon--exercise: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>');
+}
+
+/* Caja "exercise" para ejercicios prácticos */
+.md-typeset .admonition.exercise,
+.md-typeset details.exercise {
+  border-color: #7c4dff;
+}
+.md-typeset .exercise > .admonition-title,
+.md-typeset .exercise > summary {
+  background-color: rgba(124, 77, 255, 0.1);
+}
+.md-typeset .exercise > .admonition-title::before,
+.md-typeset .exercise > summary::before {
+  background-color: #7c4dff;
+  -webkit-mask-image: var(--md-admonition-icon--exercise);
+  mask-image: var(--md-admonition-icon--exercise);
+}
+
+/* Etiquetas de nivel: <span class="nivel basico">Básico</span> */
+.md-typeset .nivel {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.md-typeset .nivel.basico   { background: #e0f2f1; color: #00695c; }
+.md-typeset .nivel.medio    { background: #fff3e0; color: #e65100; }
+.md-typeset .nivel.avanzado { background: #fce4ec; color: #ad1457; }
+
+/* Tablas comparativas a ancho completo */
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+}
+
+/* Filtro de la página de ejercicios */
+.md-typeset .ej-filtro {
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.5em 0.8em;
+  margin: 0.5em 0 1em;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.3em;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+}

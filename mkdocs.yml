@@ -1,0 +1,175 @@
+site_name: Architect Study Hub
+site_description: Base de conocimiento de teoría y práctica para arquitectura e ingeniería de software, plataforma y cloud.
+site_author: ferre
+# En GitHub Actions se rellenan con la URL de GitHub Pages y del repositorio; en local, valores por defecto
+site_url: !ENV [SITE_URL, "http://127.0.0.1:8000/"]
+repo_url: !ENV REPO_URL
+
+validation:
+  anchors: warn
+  unrecognized_links: warn
+copyright: Material de estudio personal — resúmenes y ejemplos propios
+
+theme:
+  name: material
+  language: es
+  icon:
+    logo: material/sitemap-outline
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+
+plugins:
+  - search:
+      lang: es
+
+extra_css:
+  - assets/extra.css
+  - assets/chat.css
+
+extra_javascript:
+  - assets/ejercicios.js
+  - https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js
+  - https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js
+  - assets/chat.js
+
+hooks:
+  - hooks/ejercicios.py
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Inicio: index.md
+  - Ejercicios: ejercicios.md
+  - Fundamentos:
+      - fundamentos/index.md
+      - Algoritmos y estructuras de datos: fundamentos/algoritmos.md
+      - Redes: fundamentos/redes.md
+      - Concurrencia y SO: fundamentos/concurrencia.md
+      - Bases de datos: fundamentos/bases-de-datos.md
+  - Diseño y código:
+      - diseno/index.md
+      - Principios SOLID: diseno/solid.md
+      - Patrones de diseño: diseno/patrones-diseno.md
+      - Testing: diseno/testing.md
+  - Java y Spring:
+      - java/index.md
+      - La JVM por dentro: java/jvm.md
+      - Java moderno (8 → 25): java/java-moderno.md
+      - Spring y Spring Boot: java/spring.md
+  - Arquitectura:
+      - arquitectura/index.md
+      - Estilos de arquitectura: arquitectura/estilos.md
+      - Domain-Driven Design: arquitectura/ddd.md
+      - Diseño de APIs: arquitectura/apis.md
+      - ADRs y trade-offs: arquitectura/adr.md
+      - El rol del arquitecto: arquitectura/rol-del-arquitecto.md
+  - System Design:
+      - system-design/index.md
+      - Fundamentos: system-design/fundamentos.md
+      - "Caso: Rate limiter": system-design/rate-limiter.md
+      - "Caso: Acortador de URLs": system-design/url-shortener.md
+      - "Caso: Almacén clave-valor": system-design/key-value-store.md
+      - "Caso: Notificaciones": system-design/notificaciones.md
+      - "Caso: Chat": system-design/chat.md
+      - "Caso: Web crawler": system-design/web-crawler.md
+      - "Caso: News feed": system-design/news-feed.md
+      - "Caso: Autocompletado": system-design/autocompletado.md
+      - "Caso: Plataforma de vídeo": system-design/video.md
+      - "Caso: Proximidad": system-design/proximidad.md
+      - "Caso: Pagos": system-design/pagos.md
+  - Datos:
+      - datos/index.md
+      - Apache Kafka: datos/kafka.md
+      - Procesamiento en streaming: datos/streaming.md
+      - Plataformas de datos: datos/plataformas-datos.md
+  - Plataforma:
+      - plataforma/index.md
+      - Kubernetes: plataforma/kubernetes.md
+      - GitOps: plataforma/gitops.md
+      - IaC y Config as Code: plataforma/iac-cac.md
+      - Edge computing: plataforma/edge.md
+      - Observabilidad: plataforma/observabilidad.md
+      - CI/CD: plataforma/cicd.md
+      - Seguridad: plataforma/seguridad.md
+  - Inteligencia Artificial:
+      - ia/index.md
+      - Tipos de IA y ML: ia/tipos.md
+      - Cómo funcionan los LLMs: ia/llms.md
+      - Construir aplicaciones con LLMs: ia/aplicaciones.md
+      - Agentes, MCP y Skills: ia/agentes.md
+      - Harnesses y agentes de código: ia/harness.md
+      - Seguridad y regulación: ia/seguridad.md
+      - Jev y modelos System One: ia/jev.md
+      - MLOps y ajuste fino: ia/mlops.md
+      - IA en el edge: ia/edge-ai.md
+      - Ecosistema: ia/ecosistema.md
+  - Cloud:
+      - cloud/index.md
+      - Equivalencias entre nubes: cloud/equivalencias.md
+      - AWS: cloud/aws.md
+      - Azure: cloud/azure.md
+      - Google Cloud: cloud/gcp.md
+      - Costes y FinOps: cloud/costes.md
+      - Certificaciones: cloud/certificaciones.md
+  - Biblioteca:
+      - libros/index.md
+      - Código Limpio: libros/clean-code.md
+      - Arquitectura Limpia: libros/clean-architecture.md
+      - System Design Interview: libros/system-design-interview.md
+      - Cracking the Coding Interview: libros/cracking-the-coding-interview.md
+  - Glosario: glosario.md

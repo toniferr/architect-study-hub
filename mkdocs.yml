@@ -101,6 +101,7 @@ nav:
       - Redes: fundamentos/redes.md
       - Concurrencia y SO: fundamentos/concurrencia.md
       - Bases de datos: fundamentos/bases-de-datos.md
+      - Compilación, ejecución y servidores: fundamentos/ejecucion.md
   - Diseño y código:
       - diseno/index.md
       - Principios SOLID: diseno/solid.md

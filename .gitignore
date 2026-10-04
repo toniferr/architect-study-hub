@@ -3,3 +3,6 @@ site/
 __pycache__/
 .cache/
 .env
+
+# Local working notes for Claude, not published
+PROGRESS.md

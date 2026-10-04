@@ -17,6 +17,12 @@ Agregado
 Alucinación
 :   Respuesta plausible pero falsa generada por un modelo de lenguaje.
 
+AOT (compilación Ahead-Of-Time)
+:   Compilar a código nativo antes de ejecutar: arranque inmediato y menos memoria, sin calentamiento del JIT. → [Compilación y ejecución](fundamentos/ejecucion.md)
+
+ASGI / WSGI
+:   Interfaces estándar entre un servidor y una aplicación Python: WSGI es síncrona (Gunicorn), ASGI asíncrona (Uvicorn). → [Compilación y ejecución](fundamentos/ejecucion.md#5-tipos-de-servidores)
+
 BASE
 :   *Basically Available, Soft state, Eventually consistent*. Alternativa a ACID en sistemas distribuidos.
 
@@ -99,7 +105,7 @@ Jev
 :   Modelo de TypeSafe AI (septiembre de 2026) que devuelve decisiones tipadas con probabilidades calibradas en lugar de texto. → [Jev](ia/jev.md)
 
 JIT (compilación Just-In-Time)
-:   La JVM compila a código nativo los métodos más usados mientras la aplicación se ejecuta, usando su perfil real. → [JVM](java/jvm.md)
+:   El runtime compila a código nativo los métodos más usados mientras la aplicación se ejecuta, usando su perfil real (JVM, .NET, V8). → [JVM](java/jvm.md), [Compilación y ejecución](fundamentos/ejecucion.md)
 
 Lakehouse
 :   Plataforma analítica que combina ficheros abiertos en un data lake con un formato de tabla transaccional (Iceberg, Delta). → [Plataformas de datos](datos/plataformas-datos.md)
@@ -170,6 +176,9 @@ Saga
 Savings Plan / Reserva / CUD
 :   Descuentos a cambio de comprometer uso o gasto durante 1-3 años. → [Costes](cloud/costes.md#modelos-de-compra)
 
+Servidor de aplicaciones
+:   Proceso que ejecuta aplicaciones y les ofrece servicios (HTTP, transacciones, mensajería): Tomcat, WildFly, WebLogic; o embebido, como en Spring Boot. → [Compilación y ejecución](fundamentos/ejecucion.md#5-tipos-de-servidores)
+
 Skill (Agent Skill)
 :   Carpeta con instrucciones (`SKILL.md`), scripts y recursos que un agente carga solo cuando la tarea lo requiere. → [Skills](ia/agentes.md#agent-skills)
 
@@ -187,6 +196,9 @@ System One (modelo)
 
 Token
 :   Unidad de texto que procesa un modelo de lenguaje; mide contexto, precio y latencia.
+
+Transpilación
+:   Traducir código de un lenguaje de alto nivel a otro, como TypeScript a JavaScript. → [Compilación y ejecución](fundamentos/ejecucion.md)
 
 WAL
 :   *Write-Ahead Log*: registro donde la base de datos escribe los cambios antes de aplicarlos; garantiza durabilidad.

@@ -99,6 +99,15 @@ combina explicación, **ejemplos de código**, diagramas, **preguntas de repaso*
 
     [:octicons-arrow-right-24: Ejercicios](ejercicios.md)
 
+-   :material-account-tie-voice-outline:{ .lg .middle } **Entrevistas**
+
+    ---
+
+    Preguntas de entrevista por temática con respuesta modelo y repregunta, y un simulacro con cronómetro que las
+    mezcla todas.
+
+    [:octicons-arrow-right-24: Entrevistas](entrevistas/index.md)
+
 -   :material-alphabetical-variant:{ .lg .middle } **Glosario**
 
     ---

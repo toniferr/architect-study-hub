@@ -60,7 +60,8 @@ docs/
 ├── system-design/   fundamentos y casos resueltos
 ├── plataforma/      Kubernetes, GitOps, IaC/CaC, edge, observabilidad, CI/CD, seguridad
 ├── cloud/           AWS, Azure, GCP, equivalencias, costes/FinOps, certificaciones
-└── libros/          resúmenes de libros
+├── libros/          resúmenes de libros
+└── entrevistas/     preguntas de entrevista por temática y simulacro
 mkdocs.yml           navegación y configuración
 ```
 
@@ -80,6 +81,22 @@ Cada ejercicio sigue esta convención (la solución va plegada dentro del enunci
 
 El hook `hooks/ejercicios.py` añade un ancla a cada ejercicio y genera en cada build la página `Ejercicios`
 con todos ellos agrupados por nivel.
+
+## Entrevistas y simulacro
+
+`docs/entrevistas/` tiene una página de preguntas por temática y el simulacro. Cada pregunta sigue esta convención
+(el `##` anterior es su subtema):
+
+```markdown
+??? question "Básico|Medio|Avanzado · ¿Pregunta?"
+    Respuesta modelo.
+
+    **Repregunta:** ¿…? — respuesta breve.
+```
+
+El hook `hooks/entrevistas.py` añade un ancla a cada pregunta, genera la tabla de recuento de la portada de la
+sección e inyecta todas las preguntas como JSON en `entrevistas/simulacro.md`, que usa `docs/assets/simulacro.js`.
+Para añadir una temática nueva: crea su página y añádela a `TOPICS` en el hook y a `nav:`.
 
 ## Publicar un HTML estático
 

@@ -50,3 +50,114 @@
   color: var(--md-default-fg-color);
   font-size: 0.8rem;
 }
+
+/* Simulacro de entrevista (assets/simulacro.js) */
+.md-typeset .sim [hidden] { display: none !important; }
+.md-typeset .sim-panel {
+  padding: 1rem 1.2rem;
+  margin: 1em 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  background: var(--md-default-bg-color);
+}
+.md-typeset .sim-presets { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+.md-typeset .sim-preset {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem;
+  flex: 1 1 10rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.3rem;
+  background: transparent; color: inherit; cursor: pointer; text-align: left;
+}
+.md-typeset .sim-preset:hover, .md-typeset .sim-preset:focus-visible { border-color: var(--md-accent-fg-color); }
+.md-typeset .sim-preset small { color: var(--md-default-fg-color--light); }
+.md-typeset .sim-fieldset {
+  margin: 0 0 1rem; padding: 0.5rem 0.8rem 0.7rem;
+  border: 1px solid var(--md-default-fg-color--lightest); border-radius: 0.3rem;
+}
+.md-typeset .sim-fieldset legend { padding: 0 0.3rem; font-weight: 700; }
+.md-typeset .sim-checks { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; }
+.md-typeset .sim-check { cursor: pointer; white-space: nowrap; }
+.md-typeset .sim-check small { color: var(--md-default-fg-color--light); }
+.md-typeset .sim-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; }
+.md-typeset .sim-input {
+  margin-left: 0.3rem; padding: 0.25em 0.4em; max-width: 7rem;
+  border: 1px solid var(--md-default-fg-color--lighter); border-radius: 0.3em;
+  background: var(--md-default-bg-color); color: var(--md-default-fg-color); font: inherit;
+}
+.md-typeset .sim-disponibles { color: var(--md-default-fg-color--light); }
+.md-typeset .sim-link {
+  padding: 0; border: 0; background: none; cursor: pointer; font: inherit;
+  color: var(--md-typeset-a-color); text-decoration: underline;
+}
+.md-typeset .sim-cabecera { display: flex; justify-content: space-between; gap: 1rem; font-weight: 700; }
+.md-typeset .sim-reloj { font-variant-numeric: tabular-nums; }
+.md-typeset .sim-reloj--aviso { color: #e65100; }
+.md-typeset .sim-reloj--fuera { color: #c62828; }
+.md-typeset .sim-progreso, .md-typeset .sim-barra {
+  height: 0.35rem; margin: 0.4rem 0 0.8rem; border-radius: 1rem; overflow: hidden;
+  background: var(--md-default-fg-color--lightest);
+}
+.md-typeset .sim-progreso span, .md-typeset .sim-barra span {
+  display: block; height: 100%; background: var(--md-accent-fg-color); transition: width 0.3s;
+}
+.md-typeset .sim-tabla { overflow-x: auto; }
+.md-typeset .sim-tabla table:not([class]) { display: table; margin: 0.5em 0; }
+.md-typeset .sim-barra { display: inline-block; width: 5rem; margin: 0; vertical-align: middle; }
+.md-typeset .sim-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.md-typeset .sim-chip {
+  padding: 0.1em 0.6em; border-radius: 1em; font-size: 0.7rem; font-weight: 700;
+  background: var(--md-primary-fg-color); color: var(--md-primary-bg-color);
+}
+.md-typeset .sim-chip--suave { background: var(--md-default-fg-color--lightest); color: var(--md-default-fg-color); }
+.md-typeset .sim-pregunta { font-size: 1.05rem; font-weight: 700; line-height: 1.4; }
+.md-typeset .sim-notas {
+  box-sizing: border-box; width: 100%; padding: 0.6em 0.8em; resize: vertical;
+  border: 1px solid var(--md-default-fg-color--lighter); border-radius: 0.3em;
+  background: var(--md-default-bg-color); color: var(--md-default-fg-color); font: inherit; font-size: 0.75rem;
+}
+.md-typeset .sim-acciones { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0; }
+.md-typeset .sim-acciones .md-button { margin: 0; }
+.md-typeset .sim-respuesta, .md-typeset .sim-ia {
+  margin-top: 0.8rem; padding: 0.6rem 0.9rem;
+  border-left: 0.2rem solid var(--md-accent-fg-color); border-radius: 0.2rem;
+  background: var(--md-code-bg-color);
+}
+.md-typeset .sim-ia { border-left-color: #7c4dff; }
+.md-typeset .sim-respuesta-titulo { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.md-typeset .sim-pregunta-autoeval { margin-bottom: 0; font-weight: 700; }
+.md-typeset .sim-nota {
+  padding: 0.45em 0.9em; border: 1px solid; border-radius: 0.3em;
+  background: transparent; cursor: pointer; font: inherit; font-weight: 700;
+}
+.md-typeset .sim-nota--bien   { color: #2e7d32; }
+.md-typeset .sim-nota--medias { color: #e65100; }
+.md-typeset .sim-nota--mal    { color: #c62828; }
+.md-typeset .sim-nota:hover, .md-typeset .sim-nota:focus-visible { background: var(--md-default-fg-color--lightest); }
+.md-typeset .sim-escribiendo::after { content: "▍"; animation: sim-parpadeo 1s steps(1) infinite; }
+@keyframes sim-parpadeo { 50% { opacity: 0; } }
+.md-typeset .sim-aviso { color: #c62828; }
+.md-typeset .sim-pie { margin-bottom: 0; text-align: right; }
+.md-typeset .sim-nota-final { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.8rem; }
+.md-typeset .sim-nota-final strong { font-size: 2.2rem; color: var(--md-accent-fg-color); }
+.md-typeset .sim-resultados { list-style: none; margin-left: 0; padding-left: 0; }
+.md-typeset .sim-resultados li.sim-resultado { margin-left: 0; }
+.md-typeset .sim-resultado-icono { display: inline-block; width: 1.4em; font-weight: 700; }
+.md-typeset .sim-resultado--bien .sim-resultado-icono    { color: #2e7d32; }
+.md-typeset .sim-resultado--medias .sim-resultado-icono  { color: #e65100; }
+.md-typeset .sim-resultado--mal .sim-resultado-icono,
+.md-typeset .sim-resultado--saltada .sim-resultado-icono { color: #c62828; }
+[data-md-color-scheme="slate"] .md-typeset .sim-nota--bien,
+[data-md-color-scheme="slate"] .md-typeset .sim-resultado--bien .sim-resultado-icono { color: #81c784; }
+[data-md-color-scheme="slate"] .md-typeset .sim-nota--medias,
+[data-md-color-scheme="slate"] .md-typeset .sim-resultado--medias .sim-resultado-icono,
+[data-md-color-scheme="slate"] .md-typeset .sim-reloj--aviso { color: #ffb74d; }
+[data-md-color-scheme="slate"] .md-typeset .sim-nota--mal,
+[data-md-color-scheme="slate"] .md-typeset .sim-resultado--mal .sim-resultado-icono,
+[data-md-color-scheme="slate"] .md-typeset .sim-resultado--saltada .sim-resultado-icono,
+[data-md-color-scheme="slate"] .md-typeset .sim-reloj--fuera,
+[data-md-color-scheme="slate"] .md-typeset .sim-aviso { color: #e57373; }
+@media (max-width: 30em) {
+  .md-typeset .sim-panel { padding: 0.8rem; }
+  .md-typeset .sim-acciones .md-button { flex: 1 1 100%; text-align: center; }
+}

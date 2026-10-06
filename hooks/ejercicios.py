@@ -122,3 +122,9 @@ def on_page_markdown(markdown, page, config, files):
             out.append("")
         out.append(line)
     return "\n".join(out)
+
+
+def on_config(config):
+    """Cuántos ejercicios hay, para la portada (overrides/home.html)."""
+    config["extra"]["ejercicios"] = len(_collect(pathlib.Path(config["docs_dir"])))
+    return config

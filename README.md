@@ -62,6 +62,7 @@ docs/
 ├── cloud/           AWS, Azure, GCP, equivalencias, costes/FinOps, certificaciones
 ├── libros/          resúmenes de libros
 └── entrevistas/     preguntas de entrevista por temática y simulacro
+overrides/home.html  plantilla de la portada
 mkdocs.yml           navegación y configuración
 ```
 
@@ -81,6 +82,14 @@ Cada ejercicio sigue esta convención (la solución va plegada dentro del enunci
 
 El hook `hooks/ejercicios.py` añade un ancla a cada ejercicio y genera en cada build la página `Ejercicios`
 con todos ellos agrupados por nivel.
+
+## Portada
+
+La portada (`docs/index.md` con `template: home.html`) es solo una presentación a pantalla completa: la plantilla
+`overrides/home.html` (activada con `theme.custom_dir`) pinta el texto y las cifras (páginas, ejercicios y preguntas,
+que calculan los hooks en `config.extra`), y `docs/assets/splash.js` dibuja un sistema isométrico que se monta solo y
+recorre escenas (petición, evento, caché, escalado, GitOps, fallo, observabilidad); cada pieza enlaza a su página de
+teoría. Las tarjetas de secciones están en `docs/temas.md`.
 
 ## Entrevistas y simulacro
 

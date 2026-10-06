@@ -1,0 +1,40 @@
+{#- Portada: solo la presentación, a pantalla completa. El gráfico (assets/splash.js) es un sistema que se monta solo
+    y cuenta, escena a escena, de qué va la web; cada pieza enlaza a su página de teoría. Los temas están en temas/. -#}
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  {%- set ns = namespace(paginas=0) -%}
+  {%- for p in nav.pages -%}{%- set ns.paginas = ns.paginas + 1 -%}{%- endfor -%}
+  <section class="ash-splash" id="ash-splash" data-base="{{ base_url }}" aria-labelledby="ash-splash-title">
+    <canvas class="ash-splash-canvas" role="img"
+      aria-label="Un sistema distribuido dibujado en perspectiva isométrica que se monta solo: cliente, API gateway, microservicios en un clúster de Kubernetes, Kafka, PostgreSQL, Redis y un repositorio Git con Flux. Por él viajan peticiones y eventos, y escena a escena escala, se despliega con GitOps y se recupera de un fallo."></canvas>
+    <div class="ash-splash-copy md-typeset">
+      <p class="ash-eyebrow">Base de conocimiento de arquitectura e ingeniería de software</p>
+      <h1 id="ash-splash-title">Architect Study Hub</h1>
+      <p class="ash-lead">De los fundamentos a la nube: diseño, Java y Spring, arquitectura, sistemas distribuidos, datos,
+        plataforma, IA y cloud, con ejemplos de código, ejercicios resueltos y preguntas de entrevista. Al lado, un
+        sistema de verdad en miniatura: pulsa cualquier pieza para ir a su teoría.</p>
+      <div class="ash-cta">
+        <a class="md-button md-button--primary" href="{{ 'temas/' | url }}">Empezar por los temas →</a>
+        <a class="md-button" href="{{ 'entrevistas/simulacro/' | url }}">Simulacro de entrevista</a>
+        <a class="md-button" href="{{ 'ejercicios/' | url }}">Ejercicios</a>
+      </div>
+      <dl class="ash-stats">
+        <div><dt>páginas</dt><dd>{{ ns.paginas }}</dd></div>
+        <div><dt>ejercicios</dt><dd>{{ config.extra.ejercicios }}</dd></div>
+        <div><dt>preguntas de entrevista</dt><dd>{{ config.extra.preguntas_entrevista }}</dd></div>
+      </dl>
+    </div>
+    <div class="ash-splash-hud">
+      <ol class="ash-scenes" aria-label="Escenas"></ol>
+      <p class="ash-caption"></p>
+      <div class="ash-ctrls">
+        <button type="button" class="ash-btn" data-next>Siguiente escena</button>
+        <button type="button" class="ash-btn" data-pause aria-pressed="false">Pausa</button>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}{% endblock %}

@@ -118,3 +118,9 @@ def on_page_content(html, page, config, files):
     data = {"topics": TOPICS, "levels": LEVELS, "questions": _collect(pathlib.Path(config["docs_dir"]))}
     payload = json.dumps(data, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
     return html + f'\n<script type="application/json" id="sim-datos">{payload}</script>\n'
+
+
+def on_config(config):
+    """Cuántas preguntas hay, para la portada (overrides/home.html)."""
+    config["extra"]["preguntas_entrevista"] = len(_collect(pathlib.Path(config["docs_dir"])))
+    return config

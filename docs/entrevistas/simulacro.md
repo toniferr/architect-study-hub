@@ -15,7 +15,7 @@ tu nota por temática y qué repasar.
 </div>
 
 !!! note "Feedback con IA"
-    Si el [asistente de estudio](../index.md#como-se-lee-cada-pagina) está encendido (`./serve.ps1`), aparece el botón
+    Si el [asistente de estudio](../temas.md#como-se-lee-cada-pagina) está encendido (`./serve.ps1`), aparece el botón
     **Pedir feedback a la IA**: envía la pregunta, la respuesta modelo y la tuya al servidor local, que contesta como
     un entrevistador (qué has cubierto, qué falta, nota y una repregunta). Sin el servidor, el simulacro funciona igual.
     Tu historial de simulacros se guarda solo en este navegador.

@@ -232,6 +232,7 @@
 @media (max-width: 59.9375em) {
   .ash-splash { min-height: 0; }
   .ash-splash-copy { order: 1; width: auto; margin: 0; padding: 1.5rem 1rem 0.5rem; }
-  .ash-splash-canvas { order: 2; position: relative; height: clamp(320px, 58svh, 480px); }
+  /* The scene is wider than tall: on phones its height follows the width, so there is no empty band above it. */
+  .ash-splash-canvas { order: 2; position: relative; height: clamp(300px, min(82vw, 58svh), 480px); }
   .ash-splash-hud { order: 3; position: relative; padding: 0.4rem 1rem 1rem; }
 }

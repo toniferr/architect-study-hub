@@ -127,7 +127,10 @@
       var xs = [], ys = [];
       function add(gx, gy, gz) { xs.push(gx - gy); ys.push((gx + gy) / 2 - gz); }
       add(CLUSTER.x, CLUSTER.y, 0); add(CLUSTER.x + CLUSTER.w, CLUSTER.y, 0); add(CLUSTER.x, CLUSTER.y + CLUSTER.d, 0); add(CLUSTER.x + CLUSTER.w, CLUSTER.y + CLUSTER.d, 0);
-      PARTS.forEach(function (p) { add(p.x, p.y, 0); add(p.x + p.w, p.y + p.d, 0); add(p.x, p.y, p.h + 1); add(p.x + p.w, p.y, p.h + 1); });
+      PARTS.forEach(function (p) {
+        add(p.x, p.y, 0); add(p.x + p.w, p.y + p.d, 0); add(p.x, p.y + p.d, 0); add(p.x + p.w, p.y, 0);
+        add(p.x, p.y, p.h + 1); add(p.x + p.w, p.y, p.h + 1); add(p.x, p.y + p.d, p.h + 1);
+      });
       var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
       T = Math.min((W - left - 24) / (x1 - x0), (H - 30 - bottom) / (y1 - y0));
       ox = left + (W - left - 24 - (x1 - x0) * T) / 2 - x0 * T;
